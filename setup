@@ -14,3 +14,16 @@ echo "[*] Actualizando paquetes ..."
 echo ""
 apt update
 echo ""
+# Instalación de Tor y Macchanger
+read -p "Tiene TOR instalado? [Y/n] (N si no está seguro)" tor
+case $tor in
+	[Nn]* ) apt install tor -y; break;;
+	[Yy]* ) break;;
+       	* ) echo "Input incorrecto!"; break;;
+esac;
+read -p "Tiene Macchanger instalado? [Y/n] (N si no está seguro)" tor
+case $tor in
+	[Nn]* ) apt install macchanger -y; break;;
+	[Yy]* ) break;;
+        * ) echo "Input incorrecto!"; break;;
+esac;
